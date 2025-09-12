@@ -1,0 +1,39 @@
+# Git Setup Commands for Color Storm Unity Project
+# Run these commands in PowerShell from your project root directory
+
+# 1. Initialize the local repository
+git init -b main
+
+# 2. Install and initialize Git LFS
+git lfs install
+
+# 3. Tell LFS which file types to track (common large files in Unity)
+git lfs track "*.psd"
+git lfs track "*.png" 
+git lfs track "*.jpg"
+git lfs track "*.jpeg"
+git lfs track "*.gif"
+git lfs track "*.fbx"
+git lfs track "*.obj"
+git lfs track "*.mp3"
+git lfs track "*.wav"
+git lfs track "*.ogg"
+git lfs track "*.aif"
+git lfs track "*.mov"
+git lfs track "*.mp4"
+git lfs track "*.avi"
+
+# 4. Add the LFS configuration file to the repository
+git add .gitattributes
+
+# 5. Stage all your initial project files
+git add .
+
+# 6. Make the initial commit
+git commit -m "Initial commit: Project structure and Git LFS setup"
+
+# 7. Add the remote GitHub repository (replace with your actual repository URL)
+git remote add origin https://github.com/YourUsername/ColorStorm.git
+
+# 8. Push the initial commit to GitHub
+git push -u origin main
